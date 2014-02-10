@@ -4,6 +4,7 @@ from django.db import models
 
 class Course(models.Model):
 	name = models.CharField(unique=True, max_length=50)
+	callnumber = models.CharField(unique=False, max_length=4)
 	instructor = models.CharField(max_length=50)
 	description = models.CharField(max_length=200)
 	term = models.CharField(max_length=50)
@@ -15,16 +16,17 @@ class Course(models.Model):
 		ordering = ('-date', 'name')
 
 	def __unicode__(self):
-		return U'%s %s' %(self.name, self.instructor)
+		return U'%s | %s' %(self.callnumber, self.name)
 
 	def save(self, *args, **kwargs):
 		self.name = self.name.upper()
 		super(Course, self).save(*args, **kwargs)
 
 class Student(models.Model):
-	name = models.CharField(unique=True, max_length=50)
+	name = models.CharField(unique=False, max_length=50)
 	pid = models.CharField(unique=True, max_length=12)
-	grade = models.IntegerField(max_length=3)
+	grade = models.IntegerField(unique=False, null=True, max_length=3)
+	#imageurl = models.ImageField(max_length=100)
 
 	class Meta(object):
 		ordering = ('pid', 'name')
