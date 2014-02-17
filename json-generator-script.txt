@@ -1,0 +1,24 @@
+[
+    '{{repeat(5000)}}',
+    {
+        pk: '{{index}}',
+        model: 'roster.Student',
+        fields: 
+            {
+                age: '{{numeric(18,24)}}',
+                name: '{{firstName}} {{surname}}',
+                gender: '{{gender}}',
+                pid: '{{numeric(720000000,750000000)}}',
+                email: '{{email}}',
+                home_phone: '{{phone}}',
+                cell_phone: '{{phone}}',
+                home_address: '{{numeric(100,999)}} {{street}}, {{city}}, {{state}}, {{numeric(10000,99999)}}',
+                school_address: '{{numeric(100,999)}} {{street}}, {{city}}, {{state}}, {{numeric(10000,99999)}}',
+                grade: '{{numeric(0,100)}}',
+                class_year: '{{numeric(2014,2018)}}',
+                credit_hours_earned: '{{numeric(0,140)}}',
+                credit_hours_enrolled: '{{numeric(0,18)}}',
+                gpa: '{{numeric(1,4,0.00)}}'
+            }
+    }
+]
