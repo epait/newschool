@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+
+{% block content %}
+<h1>Students and Classes</h1>
+<p>This new interactive development school has <a href="{% url 'roster_student' %}">{{ student_count|intcomma }}</a> students in <a href="{% url 'roster_course' %}">{{ course_count|intcomma }}</a> courses.</p>
+{% endblock %}
