@@ -35,4 +35,4 @@ nosetests.xml
 .project
 .pydevproject
 
-/media_root/*
+/media_root/
