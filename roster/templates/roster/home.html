@@ -4,5 +4,9 @@
 
 {% block content %}
 <h1>Students and Classes</h1>
-<p>This new interactive development school has <a href="{% url 'roster_student' %}">{{ student_count|intcomma }}</a> students in <a href="{% url 'roster_course' %}">{{ course_count|intcomma }}</a> courses.</p>
+<p>This new interactive development school has <a href="{% url 'roster_student_list' %}">{{ student_count|intcomma }}</a> students in <a href="{% url 'roster_course_list' %}">{{ course_count|intcomma }}</a> courses.</p>
+
+<p><a href="{% url 'roster_course_list' %}">List of Courses</a></p>
+<p><a href="{% url 'roster_student_list' %}">List of Students</a></p>
+
 {% endblock %}

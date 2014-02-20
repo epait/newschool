@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Student: {{ student.name }}</h2>
+
+<div class="row">
+	<div class="col-sm-6">
+		<img src="{{ student.profile_picture }}" alt="{{ student.name }}" width="100%">
+	</div>
+
+	<div class="col-sm-6">
+		<p>Details</p>
+		<ul>
+			<li>PID: {{ student.pid }}</li>
+			<li>Grade: {{ student.grade }}%</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
